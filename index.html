@@ -10,12 +10,20 @@
 
   <h1>Welcome to My Demo Project</h1>
   <p>Ye ek simple homepage hai. Neeche example posts dekh sakte ho:</p>
-
+<!--
   <ul>
     <li><a href="demopost1.html">Demo Post 1</a></li>
     <li><a href="demopost2.html">Demo Post 2</a></li>
   </ul>
+-->
+  <ul>
+  <li><a href="#" onclick="loadPost('demopost1.html')">Demo Post 1</a></li>
+  <li><a href="#" onclick="loadPost('demopost2.html')">Demo Post 2</a></li>
+</ul>
 
+<div id="postContent" style="border:1px solid #ccc; padding:15px; margin-top:20px;">
+  <p>Yaha post load hoga...</p>
+</div>
   <!-- Floating Buttons -->
   <div id="floating-container">
     <div class="floating-btn">
@@ -25,7 +33,20 @@
       <button id="shareBtn">↗️</button>
     </div>
   </div>
-
+<script>
+function loadPost(page) {
+  fetch(page)
+    .then(res => res.text())
+    .then(data => {
+      // post file ka sirf <body> content nikalo
+      let bodyContent = data.match(/<body[^>]*>([\s\S]*)<\/body>/i)[1];
+      document.getElementById("postContent").innerHTML = bodyContent;
+    })
+    .catch(err => {
+      document.getElementById("postContent").innerHTML = "<p>Error loading post.</p>";
+    });
+}
+</script>
   <script src="main.js"></script>
 </body>
 </html>
