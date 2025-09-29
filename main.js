@@ -276,7 +276,7 @@ document.getElementById('shareBtn').addEventListener('click', function() {
     }
 });
 */
-    
+    /*
 document.getElementById("shareBtn").addEventListener("click", async () => {
   const shareData = {
     title: "MicNews123 - Short Headlines with Audio",
@@ -297,7 +297,7 @@ document.getElementById("shareBtn").addEventListener("click", async () => {
     window.open(`https://wa.me/?text=${text}`, "_blank");
   }
 });
-
+*/
 // Aapka puraana mic functionality code iske neeche ya upar jaisa tha, waisa hi rahega.
 
 
