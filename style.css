@@ -66,6 +66,10 @@ nav a:hover {
   font-size: 18px;
   cursor: pointer;
 }
+/* Alag color dena chaho */
+#floating-share { background: #2196f3; }  /* Blue */
+#floating-player { background: #4caf50; } /* Green */
+
 /* Posts */
 #posts-list {
   max-width: 600px;
