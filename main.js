@@ -11,10 +11,7 @@ const playBtn = document.getElementById("playBtn");
 // --- B. Data & State Variables ---
 // पोस्ट्स (posts) का array, इंडेक्स, और pagination (पृष्ठन) की जानकारी
 let posts = [
-    "post-1.html", "imagepost.html", "post27sep.html", "post26sep.html", 
-    "post25sep.html", "postdatalink.html", "postlink.html", "post9.html", 
-    "post1.html", "post2.html", "post3.html", "post4.html", "post5.html", 
-    "post6.html"
+    "post-1.html", "imagepost.html"
 ];
 let currentIndex = 0;
 const PAGE_SIZE = 3;
