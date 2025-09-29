@@ -244,6 +244,7 @@ postsList.addEventListener("contextmenu", (e) => {
     window.open(target.dataset.url, "_blank"); // नए टैब में URL खोलें
   }
 });
+/*
 // main.js file mein
 
 // Share Button ka code
@@ -273,6 +274,28 @@ document.getElementById('shareBtn').addEventListener('click', function() {
         // Toh hum user ko batate hain ki woh URL copy kar lein
         alert('Sharing is not supported on this device. Please copy the URL to share: ' + window.location.href);
     }
+});
+*/
+    
+document.getElementById("shareBtn").addEventListener("click", async () => {
+  const shareData = {
+    title: "MicNews123 - Short Headlines with Audio",
+    text: "Check out MicNews123: Short news headlines with audio feature!",
+    url: "https://micnews123.com/"
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+      console.log("Shared successfully!");
+    } catch (err) {
+      console.log("Share failed:", err.message);
+    }
+  } else {
+    // fallback (WhatsApp)
+    const text = encodeURIComponent(`${shareData.title}\n${shareData.text}\n${shareData.url}`);
+    window.open(`https://wa.me/?text=${text}`, "_blank");
+  }
 });
 
 // Aapka puraana mic functionality code iske neeche ya upar jaisa tha, waisa hi rahega.
