@@ -52,6 +52,27 @@
     </div>
   </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script>
+document.getElementById("shareBtn").addEventListener("click", async () => {
+  const shareData = {
+    title: "MicNews123 - Short Headlines with Audio",
+    text: "Check out MicNews123: Short news headlines with audio feature!",
+    url: "https://micnews123.com/"
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+      console.log("Shared successfully!");
+    } catch (err) {
+      console.log("Share failed:", err.message);
+    }
+  } else {
+    const text = encodeURIComponent(`${shareData.title}\n${shareData.text}\n${shareData.url}`);
+    window.open(`https://wa.me/?text=${text}`, "_blank");
+  }
+});
+  </script>
   <script src="main.js"></script>
 </body>
 </html>
