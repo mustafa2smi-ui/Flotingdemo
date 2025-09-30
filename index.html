@@ -52,7 +52,7 @@
     </div>
   </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <!--
+  
   <script>
 document.getElementById("shareBtn").addEventListener("click", async () => {
   const shareData = {
@@ -74,39 +74,8 @@ document.getElementById("shareBtn").addEventListener("click", async () => {
   }
 });
   </script>
- -->
-  <script>
-  // main.js file mein
+ 
 
-// Share Button ka code
-document.getElementById('shareBtn').addEventListener('click', function() {
-    
-    // Yahaan hum woh data dalenge jo share karna hai
-    // Hum wohi data use karenge jo humne <head> mein Meta Tags mein diya hai.
-    
-    // Checking if the browser supports the native Web Share API
-    if (navigator.share) {
-        navigator.share({
-            // Yeh title aur text wohi hai jo aapne Meta Tags mein diya hai, lekin yahaan hum isse override kar sakte hain.
-            title: 'MicNews123: Roz sunein Short Headlines',
-            text: 'Sirf 30 second mein badi khabrein! Meri nayi audio news website dekhiye.',
-            url: window.location.href // Current page (homepage) ka URL share hoga.
-        })
-        .then(() => {
-            console.log('MicNews123 successfully shared!');
-            // Aap yahaan koi feedback message bhi dikha sakte hain.
-        })
-        .catch((error) => {
-            // Agar sharing fail ho jaaye ya user cancel kar de
-            console.log('Error sharing or sharing cancelled:', error);
-        });
-    } else {
-        // Agar browser native share API ko support nahi karta (Jaise ki Desktop Chrome)
-        // Toh hum user ko batate hain ki woh URL copy kar lein
-        alert('Sharing is not supported on this device. Please copy the URL to share: ' + window.location.href);
-    }
-});
-  </script>
   <script src="main.js"></script>
 </body>
 </html>
