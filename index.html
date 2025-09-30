@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Basic Meta Tags -->
+    <title>My Website - Test Sharing</title>
+    <meta name="description" content="This is a test website for checking social media sharing functionality">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flotingdemo.netlify.app/">
+    <meta property="og:title" content="My Website - Test Sharing">
+    <meta property="og:description" content="This is a test website for checking social media sharing functionality">
+    <meta property="og:image" content="https://flotingdemo.netlify.app/Fevicon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://flotingdemo.netlify.app/">
+    <meta name="twitter:title" content="My Website - Test Sharing">
+    <meta name="twitter:description" content="This is a test website for checking social media sharing functionality">
+    <meta name="twitter:image" content="https://flotingdemo.netlify.app/Fevicon.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="Fevicon.png" type="image/png">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .share-buttons {
+            margin: 30px 0;
+        }
+        .share-btn {
+            background: #4267B2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .twitter { background: #1DA1F2; }
+        .linkedin { background: #0077B5; }
+        .whatsapp { background: #25D366; }
+        .test-image {
+            max-width: 200px;
+            margin: 20px auto;
+            border: 2px solid #ddd;
+            padding: 10px;
+        }
+        .test-image img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔗 Social Share Test Page</h1>
+    
+    <div class="test-image">
+        <p><strong>Test Image Preview:</strong></p>
+        <img src="Fevicon.png" alt="Test Fevicon" onerror="this.style.display='none'">
+        <p>If image doesn't show above, the path is incorrect</p>
+    </div>
+    
+    <p>This page tests social media sharing with Open Graph tags.</p>
+    
+    <div class="share-buttons">
+        <h3>Test Share Buttons:</h3>
+        
+        <!-- Facebook Share -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://flotingdemo.netlify.app/" 
+           target="_blank" class="share-btn">
+           📘 Share on Facebook
+        </a>
+        
+        <!-- Twitter Share -->
+        <a href="https://twitter.com/intent/tweet?url=https://flotingdemo.netlify.app/&text=Check%20this%20awesome%20website" 
+           target="_blank" class="share-btn twitter">
+           🐦 Share on Twitter
+        </a>
+        
+        <!-- LinkedIn Share -->
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://flotingdemo.netlify.app/" 
+           target="_blank" class="share-btn linkedin">
+           💼 Share on LinkedIn
+        </a>
+        
+        <!-- WhatsApp Share -->
+        <a href="https://wa.me/?text=Check%20this%20website%3A%20https%3A%2F%2Fflotingdemo.netlify.app%2F" 
+           target="_blank" class="share-btn whatsapp">
+           💬 Share on WhatsApp
+        </a>
+    </div>
+
+    <div style="margin-top: 30px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
+        <h3>🛠️ Testing Instructions:</h3>
+        <ol style="text-align: left; display: inline-block;">
+            <li>First, check if the image above shows correctly</li>
+            <li>Click any share button to test</li>
+            <li>Use <a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Debugger</a> to refresh cache</li>
+            <li>Verify image loads at: <code>https://flotingdemo.netlify.app/Fevicon.png</code></li>
+        </ol>
+    </div>
+
+    <script>
+        // Simple share function for native sharing
+        function nativeShare() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My Website - Test Sharing',
+                    text: 'Check out this awesome website!',
+                    url: 'https://flotingdemo.netlify.app/'
+                })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing:', error));
+            } else {
+                alert('Web Share API not supported in your browser. Use the buttons above.');
+            }
+        }
+        
+        // Add native share button if supported
+        if (navigator.share) {
+            const shareButtons = document.querySelector('.share-buttons');
+            const nativeBtn = document.createElement('button');
+            nativeBtn.textContent = '📱 Native Share';
+            nativeBtn.className = 'share-btn';
+            nativeBtn.style.background = '#FF6B6B';
+            nativeBtn.onclick = nativeShare;
+            shareButtons.appendChild(nativeBtn);
+        }
+    </script>
+</body>
+</html>
