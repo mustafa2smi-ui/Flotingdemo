@@ -14,8 +14,10 @@
     <meta property="og:title" content="My Website - Test Sharing">
     <meta property="og:description" content="This is a test website for checking social media sharing functionality">
     <meta property="og:image" content="https://flotingdemo.netlify.app/Fevicon.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:image:alt" content="Website Favicon">
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -23,6 +25,7 @@
     <meta name="twitter:title" content="My Website - Test Sharing">
     <meta name="twitter:description" content="This is a test website for checking social media sharing functionality">
     <meta name="twitter:image" content="https://flotingdemo.netlify.app/Fevicon.png">
+    <meta name="twitter:image:alt" content="Website favicon">
     
     <!-- Favicon -->
     <link rel="icon" href="Fevicon.png" type="image/png">
@@ -97,21 +100,21 @@
            💼 Share on LinkedIn
         </a>
         
-        <!-- WhatsApp Share -->
-        <a href="https://wa.me/?text=Check%20this%20website%3A%20https%3A%2F%2Fflotingdemo.netlify.app%2F" 
+        <!-- WhatsApp Share - Improved -->
+        <a href="https://api.whatsapp.com/send?text=Check%20this%20awesome%20website%20https%3A%2F%2Fflotingdemo.netlify.app%2F" 
            target="_blank" class="share-btn whatsapp">
            💬 Share on WhatsApp
         </a>
     </div>
 
     <div style="margin-top: 30px; padding: 20px; background: #f5f5f5; border-radius: 10px;">
-        <h3>🛠️ Testing Instructions:</h3>
-        <ol style="text-align: left; display: inline-block;">
-            <li>First, check if the image above shows correctly</li>
-            <li>Click any share button to test</li>
-            <li>Use <a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Debugger</a> to refresh cache</li>
-            <li>Verify image loads at: <code>https://flotingdemo.netlify.app/Fevicon.png</code></li>
-        </ol>
+        <h3>🛠️ WhatsApp-Specific Fixes Applied:</h3>
+        <ul style="text-align: left; display: inline-block;">
+            <li>✅ Added explicit image dimensions (300x300)</li>
+            <li>✅ Added image type (image/png)</li>
+            <li>✅ Added alt text for accessibility</li>
+            <li>✅ Improved WhatsApp share URL format</li>
+        </ul>
     </div>
 
     <script>
